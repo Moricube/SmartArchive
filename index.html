@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart Archive</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+<body>
+    <div id="container-login" class="container d-none">
+        
+        <div id="login-rows-wrap" class="rows-wrap">
+
+            <div class="row row-login">
+                <input id="login" type="text" class="col-md-6 form-control-lg form-control-md" placeholder="Логин" style="top: 0%; margin: 10px;">
+            </div>
+
+            <div class="row row-password">
+                <input id="password" type="password" class="col-md-6 form-control-lg form-control-md" placeholder="Пароль" style="top: 0%; margin: 10px">
+            </div>
+
+            <div class="row row-login-btn">
+                <button id="login-btn" class="col-md-6 btn btn-dark" type="button">Далее</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="container-hello" class="container d-none">
+        
+        <div id="hello-rows-wrap" class="rows-wrap">
+            
+            <div class="row row-username" style="height: 30%;">                
+                <h1 id="username" class="col-md text-center">Родионов Алексей Владимирович</h1>
+            </div>
+
+            <div class="row row-btns" style="height: 60%;">
+                <button id="btn-get-folder" class="col-md btn btn-dark btn-hello">Получение</button>
+                <button id="btn-return-folder" class="col-md btn btn-dark btn-hello">Возврат</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="container-choose" class="container d-none">
+
+        <div id="choose-rows-wrap" class="rows-wrap">
+
+            <div class="row" style="height: 30%;">                
+                <h1 id="choose-label" class="col-md text-center">Выберите дальнейшее действие</h1>
+            </div>
+
+            <div class="row" style="height: 60%;">
+                <button id="btn-get-folder" class="col-md btn btn-dark btn-choose">Поиск документа</button>
+                <button id="btn-return-folder" class="col-md btn btn-dark btn-choose">Выбор стеллажа</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="container-search-folder" class="container d-none">
+
+        <div id="search-rows-wrap" class="rows-wrap">
+
+            <div class="row" style="height: 30%;">                
+                <h1 id="search-label" class="col-md text-center">Введите запрос в поле поиска</h1>
+            </div>
+
+            <div class="row row-search">
+                <input id="search" type="text" class="col-md-6 form-control-lg form-control-md" placeholder="Поиск" style="top: 0%; margin: 10px;">
+            </div>
+
+            <div class="row row-btns">
+                <button id="btn-search-folder" class="col-md-6 btn btn-success btn-search">Далее</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="container-search-rack" class="container d-none">
+
+        <div id="search-rows-wrap" class="rows-wrap">
+
+            <div class="row" style="height: 30%;">                
+                <h1 id="search-rack-label" class="col-md text-center">Выберите стеллаж</h1>
+            </div>
+
+            <div class="row row-search-rack">
+                <input id="search-rack" type="number" class="col-md-6 form-control-lg form-control-md" placeholder="Номер стеллажа" style="top: 0%; margin: 10px;">
+            </div>
+
+            <div class="row row-btns">
+                <button id="btn-search-rack" class="col-md-6 btn btn-success btn-search">Далее</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="container-folderList" class="container d-none">
+
+        <div id="folderList-wrap">
+
+            <div class="row" style="height: 0%;">                
+                <h1 id="search-rack-label" class="col-md text-center">Username</h1>
+            </div>
+
+            <div class="row ">
+                
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Документ</th>
+                            <th scope="col">RFID</th>
+                            <th scope="col">Стеллаж</th>
+                            <th scope="col">Полка</th>
+                            <th scope="col">Наличие</th>
+                            <th scope="col">Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-folderList">
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="container-returnFolderList" class="container">
+
+            <div id="returnFolderList-wrap">
+    
+                <div class="row" style="height: 0%;">                
+                    <h1 id="search-rack-label" class="col-md text-center">Username</h1>
+                </div>
+    
+                <div class="row ">
+                    
+                    <table class="table">
+
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Документ</th>
+                                <th scope="col">RFID</th>
+                                <th scope="col">Стеллаж</th>
+                                <th scope="col">Полка</th>
+                                <th scope="col">Наличие</th>
+                                <th scope="col">Статус</th>
+                            </tr>
+                        </thead>
+                        
+                        
+                        <tbody id="tbody-returnFolderList-onHands">                            
+                            <tr>
+                                <td>
+                                    "Документы на руках"
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                        <hr>
+                        
+                        <tbody id="tbody-returnFolderList-user">
+                            <tr>
+                                <td>
+                                    "Документы пользователя"
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <tbody id="tbody-returnFolderList-all">
+                            <tr>
+                                <td>
+                                    "Все остальные документы"
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+
+    
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
